@@ -1,0 +1,38 @@
+import time
+import pyautogui
+
+import tkinter as tk
+
+def screenshot():
+    
+    name = int(round(time.time() * 1000 ))
+    name = 'C:/Users/USER/Desktop/ROLLS/python projects/screenshot by screenshot app/{}.png'.format(name)
+    
+    # time.sleep(5)
+    # img = pyautogui.screenshot('screenshotTakenByScreenshotProjectApp.png') #overwite the same same with other with same name
+    
+    img = pyautogui.screenshot(name) #save image with random number
+    img.show()
+    
+    
+# screenshot()
+root = tk.Tk()
+frame = tk.Frame(root)
+frame.pack()
+
+button = tk.Button(
+    frame,
+    text="take screenshot",
+    command = screenshot
+)
+
+button.pack(side=tk.LEFT)
+
+close = tk.Button(
+    frame,
+    text="Quit",
+    command = quit
+)
+close.pack(side=tk.RIGHT)
+
+root.mainloop()
